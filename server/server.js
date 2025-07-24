@@ -34,8 +34,15 @@ const allowedOrigins = [
 ];
 
 app.use(
-  cors({     
-    origin: allowedOrigins,    //URL Where our frontend hosted Initially
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl)
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
@@ -47,6 +54,7 @@ app.use(
     credentials: true,
   })
 );
+
 //------------------------------------------------------------------------
 
 //MiddleWares
