@@ -28,9 +28,14 @@ DB.connectWithDB();
 
 //------------------------------------------------------------------
 //CORS :- It is a security feature built into browsers to control how web pages can make requests to a different domain (origin) than the one that served the web page.
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://my-cart-git-main-aman-jaiswals-projects-6ce0f525.vercel.app"
+];
+
 app.use(
   cors({     
-    origin: "http://localhost:5173",    //URL Where our frontend hosted Initially
+    origin: allowedOrigins,    //URL Where our frontend hosted Initially
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
