@@ -49,8 +49,8 @@ const createOrder = async (req, res) => {
         },
       ],
       application_context: {
-        return_url: "http://localhost:5173/shop/paypal-return",
-        cancel_url: "http://localhost:5173/shop/paypal-cancel",
+        return_url: "https://my-cart-ashen-omega.vercel.app/shop/paypal-return",
+        cancel_url: "https://my-cart-ashen-omega.vercel.app/shop/paypal-cancel", 
       },
     });
 

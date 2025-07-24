@@ -230,6 +230,7 @@ function ShoppingCheckout() {
   if (approvalURL) {
     window.location.href = approvalURL;
   }
+  // console.log("approvalURL",approvalURL);
 
   return (
     <div className="flex flex-col">
@@ -240,13 +241,13 @@ function ShoppingCheckout() {
 
       {/* Content Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-5">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-1 gap-5">
           {/* Address Selection */}
           <div className="bg-white border rounded-xl p-4 shadow-sm">
             <div className="flex justify-between items-center mb-2">
               <h2 className="text-lg font-semibold">Shipping Address</h2>
             </div>
-            <div className="grid grid-cols-1 ">
+            <div className="grid grid-col ">
               <Address
                 selectedId={currentSelectedAddress}
                 setCurrentSelectedAddress={setCurrentSelectedAddress}
