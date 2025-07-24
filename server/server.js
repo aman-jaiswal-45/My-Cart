@@ -30,7 +30,7 @@ DB.connectWithDB();
 //CORS :- It is a security feature built into browsers to control how web pages can make requests to a different domain (origin) than the one that served the web page.
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://my-cart-ashen-omega.vercel.app/"
+  "https://my-cart-ashen-omega.vercel.app"
 ];
 
 app.use(
